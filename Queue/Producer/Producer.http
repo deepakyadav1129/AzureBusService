@@ -1,6 +1,8 @@
-@Producer_HostAddress = http://localhost:5297
+@Producer_HostAddress = https://localhost:7232
 
 GET {{Producer_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+POST {{Producer_HostAddress}}/api/servicebus/create
+Accept: application/json

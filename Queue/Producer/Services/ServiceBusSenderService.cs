@@ -26,7 +26,10 @@ namespace Producer.Services
 
             var json = JsonSerializer.Serialize(data);
 
-            var message = new ServiceBusMessage(Encoding.UTF8.GetBytes(json));
+            var message = new ServiceBusMessage(Encoding.UTF8.GetBytes(json))
+            {
+                SessionId = "1001"
+            };
             await sender.SendMessageAsync(message);
 
             await sender.DisposeAsync(); 
